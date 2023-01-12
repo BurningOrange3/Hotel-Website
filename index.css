@@ -1,0 +1,196 @@
+/* 
+CST8285 Assignment_2 external CSS
+Code by Chengran Sun (041053216)
+This CSS file is for the home page
+*/
+
+*,
+main {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav {
+    padding: 10px;
+    background-color: #005EAD;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+nav ul,
+nav li {
+    display: inline;
+    margin: 0;
+}
+
+nav ul {
+    float: right;
+}
+
+nav a,
+footer a {
+    text-decoration: none;
+    border-style: solid;
+    border-color: #2296F5;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+}
+
+a:hover {
+    color: black;
+    background-color: orangered;
+}
+
+h2 {
+    font-size: 5rem;
+    padding: 50px 40px 20px 40px;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 4px 4px 4px #2296F5;
+}
+
+.index_main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+        "welcome_section welcome_section welcome_section welcome_section welcome_section welcome_section"
+        "search_bar search_bar search_bar search_bar search_bar search_bar"
+        "aside room_list room_list room_list room_list room_list"
+    ;
+}
+
+.sort_search_bar_container {
+    grid-area: search_bar;
+}
+
+.welcome_section {
+    grid-area: welcome_section;
+    background-image: url("./../images/welcome_top.jpg");
+    color: #005EAD;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #005EAD;
+    color: white;
+    padding: 20px 10px 20px 20px;
+    text-align: center;
+}
+
+aside li {
+    margin: 10px 10px 30px 10px;
+}
+
+.room_list {
+    grid-area: room_list;
+    display: flex;
+    background-color: antiquewhite;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.room {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 300px;
+    border: 3px solid #005EAD;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 5px 10px 10px #005EAD;
+    height: fit-content;
+
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+
+.room img {
+    width: 100%;
+    height: 170px;
+}
+
+.room h3,
+.room span {
+    text-align: center;
+    background-color: #005EAD;
+    color: white;
+    border-radius: 30px 30px 1px 1px;
+    padding: 5px;
+}
+
+.room p {
+    text-align: justify;
+    width: 300px;
+    height: 131px;
+}
+
+.room>div {
+    text-align: center;
+    background-color: #005EAD;
+    border-radius: 1px 1px 30px 30px;
+    padding: 5px;
+}
+
+.room a {
+    color: white;
+}
+
+.one_room {
+    flex-grow: 1;
+}
+
+.one_room img {
+    width: 100%;
+    height: 100%;
+}
+
+.one_room p {
+    text-align: justify;
+    width: 100%;
+    height: auto;
+    font-size: 1.4rem;
+}
+
+footer {
+    background-image: url("./../images/welcome_foot.jpg");
+    text-align: right;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+    .index_main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "welcome_section"
+            "search_bar"
+            "aside"
+            "room_list"
+        ;
+    }
+}
